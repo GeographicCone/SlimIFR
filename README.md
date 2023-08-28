@@ -15,7 +15,7 @@ This script makes it easier to browse and read an _IFR Extractor_ dump.
 
 ### Comparison
 
-|           |  IFR Extractor Verbose | Ifr Extractor  |  IfrFmt  |
+|           |  IFR Extractor Verbose | IFR Extractor  |  IfrFmt  |
 |----------:|-----------------------:|---------------:|---------:|
 | File Size | 3MB                    | 2MB            | 500 kB   |
 | # of Rows | 33,479                 | 33,479         | 4,604    |
