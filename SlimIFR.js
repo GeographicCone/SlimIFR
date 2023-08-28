@@ -1,10 +1,10 @@
 
-// IfrFmt.js
+// SlimIFR.js
 // Version: 2023-08-28
 
 // Make the output of UEFI Internal Forms Representation more concise and human-readable
 
-// Usage: % node IfrFmt.js <InFile> <OutFile>
+// Usage: % node SlimIFR.js <InFile> <OutFile>
 // Where: <InFile> - Output of: % IFRExtractor <SetupModule> verbose
 
 // Output: <VarStoreName>:<Offset>[(Size|SizeRangeMin-SizeRangeMax)] <Form>: <Prompt> [AllowedValueList|AllowedValueScopeMin - AllowedValueScopeMax]
