@@ -1,6 +1,6 @@
 
 // SlimIFR.js
-// Version: 2023-08-28
+// Version: 2023-08-29
 
 // Make the output of UEFI Internal Forms Representation more concise and human-readable
 
@@ -60,7 +60,7 @@ function t(string) {
         else if(entry = row.match(
             /OneOfOption Option: "(.*)" Value: (.*) \{/)) {
             // Append the option to the the output
-            o += ` [${h(entry[2])} - ${entry[1]}]`;
+            o += ` [${h(parseInt(entry[2], 10).toString(16))} - ${entry[1]}]`;
         }
 
         // Entry is a set-choice prompt
