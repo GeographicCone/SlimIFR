@@ -64,13 +64,22 @@ Also see:
 * UEFI (BIOS) image to explore
 * [UEFITool](https://github.com/LongSoft/UEFITool/) or another utility to extract the `Setup` module from the image
 * [IFR Extractor](https://github.com/LongSoft/IFRExtractor-RS) to extract the _IFR_ data from the `Setup` module
-* [Node.js](https://nodejs.org/en/download) to run the script (`wget https://nodejs.org/dist/v18.17.1/win-x64/node.exe`)
+* [Node.js](https://nodejs.org/en/download) to run the script: `wget https://nodejs.org/dist/v18.17.1/win-x64/node.exe`
 
 ### Run
 
-* `UEFIExtract Image.bin 899407D7-99FE-43D8-9A21-79EC328CAC21 -m file -o Setup.efi` to extract the `Setup` module
-* `IFRExtractor Setup.efi verbose` to extract the IFR data
-* `node SlimIFR.js Setup.efi.0.0.en-US.ifr.txt IFR.txt` (the parameters are simply: `<InputFilename> <OutputFilename>`)
+* Extract the `Setup` module (example, exact steps are device-specific):
+````
+UEFIExtract Image.bin 899407D7-99FE-43D8-9A21-79EC328CAC21 -m file -o Setup.efi
+````
+* Extract the _IFR_ data:
+````
+IFRExtractor Setup.efi verbose
+````
+* Trim it with **SlimIFR**: (the parameters are simply `<InputFilename> <OutputFilename>`)
+````
+node SlimIFR.js IFR-Verbose.txt IFR-Slim.txt
+````
 
 ### Use
 
