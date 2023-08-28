@@ -1,4 +1,4 @@
-# IfrFmt – Internal Form Representation Formatting Script
+# SlimIFR – Internal Form Representation Formatting Script
 
 ## The What
 
@@ -15,10 +15,10 @@ This script makes it easier to browse and read an _IFR Extractor_ dump.
 
 ### Comparison
 
-|           |  IFR Extractor Verbose | IFR Extractor  |  IfrFmt  |
-|----------:|-----------------------:|---------------:|---------:|
-| File Size | 3MB                    | 2MB            | 500 kB   |
-| # of Rows | 33,479                 | 33,479         | 4,604    |
+|           | IFRExtractor Verbose | IFRExtractor | SlimIFR |
+|----------:|---------------------:|-------------:|--------:|
+| File Size | 3MB                  | 2MB          | 500 kB  |
+| # of Rows | 33,479               | 33,479       | 4,604   |
 
 ### Example
 
@@ -54,8 +54,8 @@ SaSetup:0x000F(0x02)             Memory Overclocking Menu: tREFI [0x0000 - 0xFFF
 </details>
 
 Also see:
-* [Example-Input.txt](https://github.com/GeographicCone/IfrFmt/blob/master/Example-Input.txt)…
-* …and [Example-Output.txt](https://github.com/GeographicCone/IfrFmt/blob/master/Example-Output.txt)
+* [Example-Input.txt](https://github.com/GeographicCone/SlimIFR/blob/master/Example-Input.txt)…
+* …and [Example-Output.txt](https://github.com/GeographicCone/SlimIFR/blob/master/Example-Output.txt)
 
 ## The How
 
@@ -70,7 +70,7 @@ Also see:
 
 * `UEFIExtract Image.bin 899407D7-99FE-43D8-9A21-79EC328CAC21 -m file -o Setup.efi` to extract the `Setup` module
 * `IFRExtractor Setup.efi verbose` to extract the IFR data
-* `node IfrFmt.js Setup.efi.0.0.en-US.ifr.txt IFR.txt` (the parameters are simply: `<InputFilename> <OutputFilename>`)
+* `node SlimIFR.js Setup.efi.0.0.en-US.ifr.txt IFR.txt` (the parameters are simply: `<InputFilename> <OutputFilename>`)
 
 ### Use
 
@@ -83,7 +83,7 @@ Most of the available _UEFI (BIOS) Setup_ settings on any given platform are typ
 
 The IFR data is stored as a blob within the `Setup` or `SetupUtility` EFI module. A tool to dump it in a human-readable form was first written by [Donovan6000](https://github.com/donovan6000/Universal-IFR-Extractor). More recently, a rewritten and updated version has been maintained by [LongSoft](https://github.com/LongSoft/UEFITool/). The verbose output provided by these tools is essential for some use cases but can be suboptimal for quickly just browsing through.
 
-Enter **IfrFmt**.
+Enter **SlimIFR**.
 
 ## Credits
 
