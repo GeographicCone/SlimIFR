@@ -2,7 +2,11 @@
 
 ## The What
 
-This script makes it easier to browse and read an _IFR Extractor_ dump.
+This script reformats an _IFR Extractor_ dump so that:
+* It's easier to browse and read
+* Can be used as input for reading and writing settings with **[UefiVarTool](https://github.com/GeographicCone/UefiVarTool)**
+
+The purpose is to be able to change any hidden _UEFI Setup_ settings, and make it efficient and straighforward. 
 
 ###  Features
 
@@ -10,7 +14,7 @@ This script makes it easier to browse and read an _IFR Extractor_ dump.
 * Redundant and unimportant output eliminated
 * Much more concise (size reduced by over 80%)
 * Hexadecimal values padded to align with one another
-* Settings sorted alphabetically by `VarStore`
+* Settings sorted alphabetically by `VarStore` (i.e. UEFI variable)
 * Easily customizable if need be
 
 ### Comparison
@@ -59,12 +63,15 @@ Also see:
 
 ## The How
 
+_Note: this is just a summary. The **[UefiVarTool](https://github.com/GeographicCone/UefiVarTool)** repository has [detailed instructions](https://github.com/GeographicCone/UefiVarTool#variable-information), which I don't want to repeat here._ 
+
+
 ### Prepare
 
 * UEFI (BIOS) image to explore
 * [UEFITool](https://github.com/LongSoft/UEFITool/) or another utility to extract the `Setup` module from the image
 * [IFR Extractor](https://github.com/LongSoft/IFRExtractor-RS) to extract the _IFR_ data from the `Setup` module
-* [Node.js](https://nodejs.org/en/download) to run the script: `wget https://nodejs.org/dist/v18.17.1/win-x64/node.exe`
+* [Node.exe](https://nodejs.org/dist/latest/win-x64/node.exe) from [Node.js](https://nodejs.org/download)
 
 ### Run
 
@@ -84,7 +91,8 @@ node SlimIFR.js IFR-Verbose.txt IFR-Slim.txt
 ### Use
 
 * Browse with a good editor such as [Notepad++](https://notepad-plus-plus.org/downloads/)
-* Change these settings with [setup_var.efi](https://github.com/datasone/setup_var.efi)
+* Change these settings with **[UefiVarTool](https://github.com/GeographicCone/UefiVarTool)**
+* Great news: _SlimIFR_ output format is almost the same as _UefiVarTool_'s input format
 
 ## The Why
 
@@ -93,6 +101,8 @@ Most of the available _UEFI (BIOS) Setup_ settings on any given platform are typ
 The IFR data is stored as a blob within the `Setup` or `SetupUtility` EFI module. A tool to dump it in a human-readable form was first written by [Donovan6000](https://github.com/donovan6000/Universal-IFR-Extractor). More recently, a rewritten and updated version has been maintained by [LongSoft](https://github.com/LongSoft/UEFITool/). The verbose output provided by these tools is essential for some use cases but can be suboptimal for quickly just browsing through.
 
 Enter **SlimIFR**.
+
+**SlimIFR** and **[UefiVarTool](https://github.com/GeographicCone/UefiVarTool)** complement each other to make the whole process easy, straightforward, and efficient, so that more people can gain access to all the hidden settings, and unlock the true abilities of their hardware.
 
 ## Credits
 
